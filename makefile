@@ -5,10 +5,10 @@ NODE=-I/usr/include/node -I$(mkfile_dir)node_modules/node-addon-api/ -I$(shell n
 INCLUDE=$(NODE)
 LIBS=
 
-BUILD_DIR=$(curdir)/build
+BUILD_DIR=$(CURDIR)/build
 
 keyboard.node: clean
-	mkdir $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR)
 	g++ lib.cpp -shared -fPIC -o $(BUILD_DIR)/keyboard.node -Wall -Wextra $(LIBS) $(INCLUDE)
 
 clean:
