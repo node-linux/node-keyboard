@@ -1,0 +1,19 @@
+{
+  "name": "keyboard",
+  "version": "1.0.0",
+  "gypfile": true,
+  "typings": "./index.d.ts",
+  "main": "./build/keyboard.js",
+  "scripts": {
+  	"postinstall": "make keyboard.node",
+  	"build": "esbuild ./src/index.ts --outfile=./build/keyboard.js --format=esm --bundle --sourcemaps --external:*.node"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^4.0.0"
+  },
+  "dev-dependencies": {
+    "typescript": "latest",
+    "esbuild": "latest"
+  }
+}
